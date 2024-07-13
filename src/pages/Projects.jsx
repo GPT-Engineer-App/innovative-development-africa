@@ -46,6 +46,57 @@ const Projects = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Our Projects</h1>
       
+      {/* Agriculture and Agribusiness Introduction */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold mb-6">Agriculture and Agribusiness in Cameroon</h2>
+        <Card>
+          <CardContent className="p-6">
+            <p className="mb-4">
+              Agriculture and agribusiness play a crucial role in Cameroon's economy and development. As a key focus area for HUFIDA, we are committed to identifying opportunities and implementing strategies that can create wealth and improve livelihoods through these sectors.
+            </p>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="context">
+                <AccordionTrigger>Context and Objectives</AccordionTrigger>
+                <AccordionContent>
+                  <p><strong>Objective:</strong> To identify opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon.</p>
+                  <p><strong>Current Focus:</strong> Evaluating key areas such as crop production, livestock farming, and agro-processing, with a focus on market demand, best practices, and value addition.</p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="domains">
+                <AccordionTrigger>Main Domains</AccordionTrigger>
+                <AccordionContent>
+                  <ol className="list-decimal list-inside space-y-2">
+                    <li><strong>Crop Production:</strong> Focusing on staple crops, cash crops, and organic farming.</li>
+                    <li><strong>Livestock Farming:</strong> Emphasizing poultry, cattle, and aquaculture.</li>
+                    <li><strong>Agro-Processing:</strong> Developing food processing, beverage production, and packaging and distribution.</li>
+                  </ol>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="components">
+                <AccordionTrigger>Contextual Components</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Crop Production:</strong> Market demand, export potential, certification and quality.</li>
+                    <li><strong>Livestock Farming:</strong> Animal husbandry practices, breeding and genetics, sustainability practices.</li>
+                    <li><strong>Agro-Processing:</strong> Value addition, quality control, market access.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="suggestions">
+                <AccordionTrigger>Key Strategies</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li><strong>Crop Production:</strong> Focus on high-demand staple crops and cash crops with strong export potential.</li>
+                    <li><strong>Livestock Farming:</strong> Implement best practices in animal husbandry and advanced breeding techniques to enhance livestock productivity.</li>
+                    <li><strong>Agro-Processing:</strong> Invest in value-adding processes, ensuring quality control and effective packaging for market access.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
+      </section>
+      
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
         <TabsList>
           <TabsTrigger value="current">Current Projects</TabsTrigger>
@@ -112,80 +163,6 @@ const Projects = () => {
           </Card>
         </TabsContent>
       </Tabs>
-      
-      {activeTab === "current" && (
-        <section className="mt-12">
-          <h2 className="text-3xl font-semibold mb-6">Featured Project: Agriculture and Agribusiness Wealth Creation Initiative</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Agriculture and Agribusiness Wealth Creation Initiative</CardTitle>
-              <CardDescription>Leveraging agriculture and agribusiness opportunities to build wealth in Cameroon</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="mb-4">
-                This project aims to identify opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon, focusing on key areas such as crop production, livestock farming, and agro-processing.
-              </p>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="context">
-                  <AccordionTrigger>Context and Objectives</AccordionTrigger>
-                  <AccordionContent>
-                    <p><strong>Objective:</strong> To identify opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon.</p>
-                    <p><strong>Current Focus:</strong> Evaluating key areas such as crop production, livestock farming, and agro-processing, with a focus on market demand, best practices, and value addition.</p>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="domains">
-                  <AccordionTrigger>Main Domains</AccordionTrigger>
-                  <AccordionContent>
-                    <ol className="list-decimal list-inside space-y-2">
-                      <li><strong>Crop Production:</strong> Focusing on staple crops, cash crops, and organic farming.</li>
-                      <li><strong>Livestock Farming:</strong> Emphasizing poultry, cattle, and aquaculture.</li>
-                      <li><strong>Agro-Processing:</strong> Developing food processing, beverage production, and packaging and distribution.</li>
-                    </ol>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="components">
-                  <AccordionTrigger>Contextual Components</AccordionTrigger>
-                  <AccordionContent>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li><strong>Crop Production:</strong> Market demand, export potential, certification and quality.</li>
-                      <li><strong>Livestock Farming:</strong> Animal husbandry practices, breeding and genetics, sustainability practices.</li>
-                      <li><strong>Agro-Processing:</strong> Value addition, quality control, market access.</li>
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="entanglement">
-                  <AccordionTrigger>Entanglement Nodes</AccordionTrigger>
-                  <AccordionContent>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>Market Demand ↔ Export Potential</li>
-                      <li>Animal Husbandry Practices ↔ Breeding and Genetics</li>
-                      <li>Value Addition ↔ Quality Control</li>
-                      <li>Market Demand ↔ Market Access</li>
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="suggestions">
-                  <AccordionTrigger>Usability Suggestions</AccordionTrigger>
-                  <AccordionContent>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li><strong>Crop Production:</strong> Focus on high-demand staple crops and cash crops with strong export potential.</li>
-                      <li><strong>Livestock Farming:</strong> Implement best practices in animal husbandry and advanced breeding techniques to enhance livestock productivity.</li>
-                      <li><strong>Agro-Processing:</strong> Invest in value-adding processes, ensuring quality control and effective packaging for market access.</li>
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="zooming">
-                  <AccordionTrigger>Contextual Zooming</AccordionTrigger>
-                  <AccordionContent>
-                    <p><strong>Zooming In:</strong> Focus on specific aspects within a domain, such as improving poultry farming practices in the livestock farming sector.</p>
-                    <p><strong>Zooming Out:</strong> Integrate multiple domains to understand their interconnectedness and overall impact on wealth creation in Cameroon's agriculture and agribusiness sector.</p>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </section>
-      )}
     </div>
   );
 };
