@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("current");
@@ -15,7 +16,13 @@ const Projects = () => {
       description: "A national consultative firm advancing science, innovation, and strategic leadership for a sustainable society.",
       progress: 75,
     },
-    // Add more current projects as needed
+    {
+      id: 2,
+      title: "Enhancing Staple Crop Production with Low-Tech Practices",
+      location: "Cameroon",
+      description: "Implementing cutting-edge low-tech practices to improve staple crop production through soil preparation, planting techniques, and pest management.",
+      progress: 40,
+    },
   ];
 
   const pastProjects = [
@@ -26,7 +33,6 @@ const Projects = () => {
       description: "Provided access to clean water for 10,000 people in rural Kenya.",
       impact: "Reduced waterborne diseases by 60% in the target communities.",
     },
-    // Add more past projects as needed
   ];
 
   return (
@@ -102,28 +108,55 @@ const Projects = () => {
       
       {activeTab === "current" && (
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold mb-6">Featured Project: The Sustainability Project Incubator LAB</h2>
+          <h2 className="text-3xl font-semibold mb-6">Featured Project: Enhancing Staple Crop Production with Low-Tech Practices</h2>
           <Card>
             <CardHeader>
-              <CardTitle>The Sustainability Project Incubator LAB</CardTitle>
-              <CardDescription>Accelerating Change Advisory Services in Cameroon</CardDescription>
+              <CardTitle>Enhancing Staple Crop Production with Low-Tech Practices</CardTitle>
+              <CardDescription>Implementing cutting-edge low-tech practices in Cameroon</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                The Sustainability Project Incubator LAB is a national consultative firm with several projects at the local and national level. With years of experience, we focus on advancing science, innovation, and strategic leadership to foster a strong economy that thrives within nature's limits.
+                This project aims to enhance the production of staple crops in Cameroon by focusing on soil preparation, planting techniques, and pest management using cutting-edge low-tech practices.
               </p>
-              <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-              <p className="mb-4">A sustainable society where individuals, communities, businesses, and institutions flourish within nature's limits.</p>
-              <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-              <p className="mb-4">To accelerate the transition to a sustainable society in Cameroon, supporting the nation's ambitious programme for economic emergence by 2035.</p>
-              <h3 className="text-xl font-semibold mb-2">Our Approach</h3>
-              <p className="mb-4">We employ the Framework for Strategic Sustainable Development (FSSD), a science-based approach used successfully in hundreds of forward-thinking organizations worldwide.</p>
-              <h3 className="text-xl font-semibold mb-2">Contact</h3>
-              <p>Fofuleng Babila</p>
-              <p>Email: fofulengbabila@gmail.com</p>
-              <p>Telephone: 670172866 / 677554684</p>
-              <p>WhatsApp: +46700292915</p>
-              <p>Location: Vicky street Small Mankon Bamenda, Cameroon</p>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="context">
+                  <AccordionTrigger>Context</AccordionTrigger>
+                  <AccordionContent>
+                    <p><strong>Objective:</strong> To enhance the production of staple crops in Cameroon by focusing on soil preparation, planting techniques, and pest management using cutting-edge low-tech practices.</p>
+                    <p><strong>Current Focus:</strong> Implementing composting, optimal seed spacing, proper seed depth, and natural pest management to improve soil fertility, plant growth, and crop protection.</p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="steps">
+                  <AccordionTrigger>Step-by-Step Guide</AccordionTrigger>
+                  <AccordionContent>
+                    <ol className="list-decimal list-inside space-y-2">
+                      <li><strong>Soil Preparation:</strong> Implement composting to increase organic matter and improve soil structure and fertility.</li>
+                      <li><strong>Planting Techniques:</strong> Use optimal seed spacing and proper seed depth to ensure healthy plant growth.</li>
+                      <li><strong>Pest Management:</strong> Apply natural pesticides and implement integrated pest management strategies.</li>
+                    </ol>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="context-zoom">
+                  <AccordionTrigger>Contextual Zooming</AccordionTrigger>
+                  <AccordionContent>
+                    <p><strong>Zooming In:</strong> Focus on specific aspects such as improving composting practices.</p>
+                    <p><strong>Zooming Out:</strong> Integrate multiple practices to understand their interconnectedness and overall impact on agricultural success.</p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="example">
+                  <AccordionTrigger>Example Scenario</AccordionTrigger>
+                  <AccordionContent>
+                    <p><strong>Context:</strong> Enhancing staple crop production using composting, optimal seed spacing, proper seed depth, and natural pest management in Cameroon.</p>
+                    <p><strong>Domains:</strong> Soil Preparation, Planting Techniques, Pest Management</p>
+                    <p><strong>Usability Suggestions:</strong></p>
+                    <ul className="list-disc list-inside">
+                      <li>Implement composting to increase organic matter and improve soil fertility.</li>
+                      <li>Use optimal seed spacing and proper seed depth to ensure healthy plant growth.</li>
+                      <li>Apply natural pesticides and monitor pest populations while using beneficial insects for biological control.</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         </section>
