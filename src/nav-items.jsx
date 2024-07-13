@@ -3,6 +3,7 @@ import Index from "./pages/Index.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Projects from "./pages/Projects.jsx";
 import GetInvolved from "./pages/GetInvolved.jsx";
+import News from "./pages/News.jsx";
 
 /**
  * Central place for defining the navigation items. Used for navigation components and routing.
@@ -36,7 +37,7 @@ export const navItems = [
     title: "News",
     to: "/news",
     icon: <Newspaper className="h-4 w-4" />,
-    page: <div>News Page</div>,
+    page: <News />,
   },
   {
     title: "Contact",
