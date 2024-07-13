@@ -34,9 +34,9 @@ const AboutUs = () => {
             </CardHeader>
             <CardContent>
               <h3 className="text-xl font-semibold mb-2">Mission</h3>
-              <p>To foster sustainable development in Africa through innovative solutions and community empowerment, addressing critical challenges in education, healthcare, agriculture, and technology.</p>
+              <p>HUFIDA is committed to supporting the development of sustainable and impactful initiatives across Africa, empowering individuals and communities to create positive change. By fostering collaboration and providing resources and tools for task management, communication, knowledge sharing, and fundraising, HUFIDA seeks to promote regional development and address the challenges faced by local communities in Africa.</p>
               <h3 className="text-xl font-semibold mt-4 mb-2">Vision</h3>
-              <p>A thriving Africa where every community has access to the tools, knowledge, and resources needed to build a prosperous and sustainable future.</p>
+              <p>A thriving Africa where every community has access to the tools, knowledge, and resources needed to build a prosperous and sustainable future. We envision a continent where regional development is driven by local initiatives, supported by innovative solutions and collaborative efforts.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -44,12 +44,12 @@ const AboutUs = () => {
         <TabsContent value="team">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Dr. Amina Nkrumah", role: "Founder & CEO", avatar: "/placeholder.svg" },
+              { name: "David Lindh", role: "Director", avatar: "/placeholder.svg" },
+              { name: "Babila Fofuleng", role: "General Secretary", avatar: "/placeholder.svg" },
+              { name: "Dr. Amina Nkrumah", role: "Head of Innovation", avatar: "/placeholder.svg" },
               { name: "John Okafor", role: "Director of Operations", avatar: "/placeholder.svg" },
-              { name: "Sarah Mwangi", role: "Head of Innovation", avatar: "/placeholder.svg" },
-              { name: "Robert Mensah", role: "Chief Financial Officer", avatar: "/placeholder.svg" },
+              { name: "Sarah Mwangi", role: "Chief Financial Officer", avatar: "/placeholder.svg" },
               { name: "Grace Adebayo", role: "Director of Partnerships", avatar: "/placeholder.svg" },
-              { name: "David Lindh", role: "Board Member", avatar: "/placeholder.svg" },
             ].map((member) => (
               <Card key={member.name}>
                 <CardContent className="flex flex-col items-center p-6">
