@@ -23,6 +23,13 @@ const Projects = () => {
       description: "Implementing cutting-edge low-tech practices to improve staple crop production through soil preparation, planting techniques, and pest management.",
       progress: 40,
     },
+    {
+      id: 3,
+      title: "Agriculture and Agribusiness Wealth Creation Initiative",
+      location: "Cameroon",
+      description: "Identifying opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon.",
+      progress: 25,
+    },
   ];
 
   const pastProjects = [
@@ -108,52 +115,70 @@ const Projects = () => {
       
       {activeTab === "current" && (
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold mb-6">Featured Project: Enhancing Staple Crop Production with Low-Tech Practices</h2>
+          <h2 className="text-3xl font-semibold mb-6">Featured Project: Agriculture and Agribusiness Wealth Creation Initiative</h2>
           <Card>
             <CardHeader>
-              <CardTitle>Enhancing Staple Crop Production with Low-Tech Practices</CardTitle>
-              <CardDescription>Implementing cutting-edge low-tech practices in Cameroon</CardDescription>
+              <CardTitle>Agriculture and Agribusiness Wealth Creation Initiative</CardTitle>
+              <CardDescription>Leveraging agriculture and agribusiness opportunities to build wealth in Cameroon</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                This project aims to enhance the production of staple crops in Cameroon by focusing on soil preparation, planting techniques, and pest management using cutting-edge low-tech practices.
+                This project aims to identify opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon, focusing on key areas such as crop production, livestock farming, and agro-processing.
               </p>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="context">
-                  <AccordionTrigger>Context</AccordionTrigger>
+                  <AccordionTrigger>Context and Objectives</AccordionTrigger>
                   <AccordionContent>
-                    <p><strong>Objective:</strong> To enhance the production of staple crops in Cameroon by focusing on soil preparation, planting techniques, and pest management using cutting-edge low-tech practices.</p>
-                    <p><strong>Current Focus:</strong> Implementing composting, optimal seed spacing, proper seed depth, and natural pest management to improve soil fertility, plant growth, and crop protection.</p>
+                    <p><strong>Objective:</strong> To identify opportunities and strategies for achieving wealth through agriculture and agribusiness in Cameroon.</p>
+                    <p><strong>Current Focus:</strong> Evaluating key areas such as crop production, livestock farming, and agro-processing, with a focus on market demand, best practices, and value addition.</p>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="steps">
-                  <AccordionTrigger>Step-by-Step Guide</AccordionTrigger>
+                <AccordionItem value="domains">
+                  <AccordionTrigger>Main Domains</AccordionTrigger>
                   <AccordionContent>
                     <ol className="list-decimal list-inside space-y-2">
-                      <li><strong>Soil Preparation:</strong> Implement composting to increase organic matter and improve soil structure and fertility.</li>
-                      <li><strong>Planting Techniques:</strong> Use optimal seed spacing and proper seed depth to ensure healthy plant growth.</li>
-                      <li><strong>Pest Management:</strong> Apply natural pesticides and implement integrated pest management strategies.</li>
+                      <li><strong>Crop Production:</strong> Focusing on staple crops, cash crops, and organic farming.</li>
+                      <li><strong>Livestock Farming:</strong> Emphasizing poultry, cattle, and aquaculture.</li>
+                      <li><strong>Agro-Processing:</strong> Developing food processing, beverage production, and packaging and distribution.</li>
                     </ol>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="context-zoom">
-                  <AccordionTrigger>Contextual Zooming</AccordionTrigger>
+                <AccordionItem value="components">
+                  <AccordionTrigger>Contextual Components</AccordionTrigger>
                   <AccordionContent>
-                    <p><strong>Zooming In:</strong> Focus on specific aspects such as improving composting practices.</p>
-                    <p><strong>Zooming Out:</strong> Integrate multiple practices to understand their interconnectedness and overall impact on agricultural success.</p>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li><strong>Crop Production:</strong> Market demand, export potential, certification and quality.</li>
+                      <li><strong>Livestock Farming:</strong> Animal husbandry practices, breeding and genetics, sustainability practices.</li>
+                      <li><strong>Agro-Processing:</strong> Value addition, quality control, market access.</li>
+                    </ul>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="example">
-                  <AccordionTrigger>Example Scenario</AccordionTrigger>
+                <AccordionItem value="entanglement">
+                  <AccordionTrigger>Entanglement Nodes</AccordionTrigger>
                   <AccordionContent>
-                    <p><strong>Context:</strong> Enhancing staple crop production using composting, optimal seed spacing, proper seed depth, and natural pest management in Cameroon.</p>
-                    <p><strong>Domains:</strong> Soil Preparation, Planting Techniques, Pest Management</p>
-                    <p><strong>Usability Suggestions:</strong></p>
-                    <ul className="list-disc list-inside">
-                      <li>Implement composting to increase organic matter and improve soil fertility.</li>
-                      <li>Use optimal seed spacing and proper seed depth to ensure healthy plant growth.</li>
-                      <li>Apply natural pesticides and monitor pest populations while using beneficial insects for biological control.</li>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>Market Demand ↔ Export Potential</li>
+                      <li>Animal Husbandry Practices ↔ Breeding and Genetics</li>
+                      <li>Value Addition ↔ Quality Control</li>
+                      <li>Market Demand ↔ Market Access</li>
                     </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="suggestions">
+                  <AccordionTrigger>Usability Suggestions</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li><strong>Crop Production:</strong> Focus on high-demand staple crops and cash crops with strong export potential.</li>
+                      <li><strong>Livestock Farming:</strong> Implement best practices in animal husbandry and advanced breeding techniques to enhance livestock productivity.</li>
+                      <li><strong>Agro-Processing:</strong> Invest in value-adding processes, ensuring quality control and effective packaging for market access.</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="zooming">
+                  <AccordionTrigger>Contextual Zooming</AccordionTrigger>
+                  <AccordionContent>
+                    <p><strong>Zooming In:</strong> Focus on specific aspects within a domain, such as improving poultry farming practices in the livestock farming sector.</p>
+                    <p><strong>Zooming Out:</strong> Integrate multiple domains to understand their interconnectedness and overall impact on wealth creation in Cameroon's agriculture and agribusiness sector.</p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
