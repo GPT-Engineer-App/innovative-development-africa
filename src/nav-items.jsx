@@ -1,6 +1,7 @@
 import { Home, Info, Briefcase, HandHeart, Newspaper, Mail } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
+import Projects from "./pages/Projects.jsx";
 
 /**
  * Central place for defining the navigation items. Used for navigation components and routing.
@@ -22,7 +23,7 @@ export const navItems = [
     title: "Projects",
     to: "/projects",
     icon: <Briefcase className="h-4 w-4" />,
-    page: <div>Projects Page</div>,
+    page: <Projects />,
   },
   {
     title: "Get Involved",
