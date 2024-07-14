@@ -10,25 +10,30 @@ import {
 } from "@/components/ui/carousel";
 import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+
+// Mock API function (replace with actual API call)
+const fetchHomeContent = async () => {
+  // Simulating API call
+  return {
+    heroTitle: "Empowering Africa Through Innovation",
+    missionStatement: "To foster sustainable development in Africa through innovative solutions and community empowerment.",
+    featuredProjects: [
+      { id: 1, title: "The Sustainability Project Incubator LAB", description: "Advancing science, innovation, and strategic leadership for a sustainable society in Cameroon." },
+      { id: 2, title: "Enhancing Staple Crop Production", description: "Implementing low-tech practices to improve staple crop production in Cameroon." },
+      { id: 3, title: "Agriculture and Agribusiness Wealth Creation Initiative", description: "Identifying opportunities for wealth creation through agriculture and agribusiness in Cameroon." },
+    ],
+  };
+};
 
 const Index = () => {
-  const currentProjects = [
-    {
-      id: 1,
-      title: "The Sustainability Project Incubator LAB",
-      description: "Advancing science, innovation, and strategic leadership for a sustainable society in Cameroon.",
-    },
-    {
-      id: 2,
-      title: "Enhancing Staple Crop Production",
-      description: "Implementing low-tech practices to improve staple crop production in Cameroon.",
-    },
-    {
-      id: 3,
-      title: "Agriculture and Agribusiness Wealth Creation Initiative",
-      description: "Identifying opportunities for wealth creation through agriculture and agribusiness in Cameroon.",
-    },
-  ];
+  const { data: homeContent, isLoading, error } = useQuery({
+    queryKey: ['homeContent'],
+    queryFn: fetchHomeContent,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading content</div>;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -36,7 +41,7 @@ const Index = () => {
       <section className="relative h-[60vh] bg-gray-900 text-white flex items-center justify-center">
         <img src="/placeholder.svg" alt="HUFIDA Mission" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="relative z-10 text-center">
-          <h1 className="text-4xl font-bold mb-4">Empowering Africa Through Innovation</h1>
+          <h1 className="text-4xl font-bold mb-4">{homeContent.heroTitle}</h1>
           <Link to="/get-involved">
             <Button size="lg">Get Involved</Button>
           </Link>
@@ -48,7 +53,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-xl">
-            To foster sustainable development in Africa through innovative solutions and community empowerment.
+            {homeContent.missionStatement}
           </p>
         </div>
       </section>
@@ -84,7 +89,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold mb-8 text-center">Current Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {currentProjects.map((project) => (
+            {homeContent.featuredProjects.map((project) => (
               <Card key={project.id}>
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
