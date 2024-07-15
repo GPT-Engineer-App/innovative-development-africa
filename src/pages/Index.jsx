@@ -8,10 +8,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
+import { ChevronRight, Mail, Phone, MapPin, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { UserRegistrationForm } from "@/components/UserRegistrationForm";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Mock API function (replace with actual API call)
 const fetchHomeContent = async () => {
@@ -33,6 +42,8 @@ const Index = () => {
     queryFn: fetchHomeContent,
   });
 
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading content</div>;
 
@@ -43,9 +54,28 @@ const Index = () => {
         <img src="/placeholder.svg" alt="HUFIDA Mission" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="relative z-10 text-center">
           <h1 className="text-4xl font-bold mb-4">{homeContent.heroTitle}</h1>
-          <Link to="/get-involved">
-            <Button size="lg">Get Involved</Button>
-          </Link>
+          <div className="flex justify-center space-x-4">
+            <Link to="/get-involved">
+              <Button size="lg">Get Involved</Button>
+            </Link>
+            <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" variant="outline">
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  Register
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Create an Account</DialogTitle>
+                  <DialogDescription>
+                    Join HUFIDA and be part of our mission to empower Africa.
+                  </DialogDescription>
+                </DialogHeader>
+                <UserRegistrationForm onSuccess={() => setIsRegistrationOpen(false)} />
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
       </section>
 
@@ -56,21 +86,6 @@ const Index = () => {
           <p className="text-xl">
             {homeContent.missionStatement}
           </p>
-        </div>
-      </section>
-
-      {/* User Registration Form */}
-      <section className="py-12 bg-secondary">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Join HUFIDA</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Create Your Account</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <UserRegistrationForm />
-            </CardContent>
-          </Card>
         </div>
       </section>
 

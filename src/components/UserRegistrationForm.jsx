@@ -11,13 +11,18 @@ import { toast } from "sonner";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Invalid email address." }),
+  password: z.string()
+    .min(8, { message: "Password must be at least 8 characters." })
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, {
+      message: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+    }),
   phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, { message: "Invalid phone number." }),
   address: z.string().min(5, { message: "Address must be at least 5 characters." }),
   interests: z.string().min(3, { message: "Please enter at least one interest." }),
   skills: z.string().min(3, { message: "Please enter at least one skill." }),
 });
 
-export function UserRegistrationForm() {
+export function UserRegistrationForm({ onSuccess }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
@@ -25,6 +30,7 @@ export function UserRegistrationForm() {
     defaultValues: {
       name: "",
       email: "",
+      password: "",
       phone: "",
       address: "",
       interests: "",
@@ -40,6 +46,9 @@ export function UserRegistrationForm() {
       toast.success("Account created successfully!");
       setIsLoading(false);
       form.reset();
+      if (onSuccess) {
+        onSuccess();
+      }
     }, 2000);
   }
 
@@ -68,6 +77,22 @@ export function UserRegistrationForm() {
               <FormControl>
                 <Input type="email" placeholder="john@example.com" {...field} />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl>
+                <Input type="password" placeholder="********" {...field} />
+              </FormControl>
+              <FormDescription>
+                Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
