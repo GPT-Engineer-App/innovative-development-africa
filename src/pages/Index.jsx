@@ -11,6 +11,7 @@ import {
 import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { UserRegistrationForm } from "@/components/UserRegistrationForm";
 
 // Mock API function (replace with actual API call)
 const fetchHomeContent = async () => {
@@ -55,6 +56,21 @@ const Index = () => {
           <p className="text-xl">
             {homeContent.missionStatement}
           </p>
+        </div>
+      </section>
+
+      {/* User Registration Form */}
+      <section className="py-12 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Join HUFIDA</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Create Your Account</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <UserRegistrationForm />
+            </CardContent>
+          </Card>
         </div>
       </section>
 
