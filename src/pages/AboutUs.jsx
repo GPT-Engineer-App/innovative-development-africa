@@ -21,8 +21,24 @@ const AboutUs = () => {
               <CardTitle>Our Story</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>HUFIDA was founded in 2010 by a group of passionate individuals who saw the need for innovative solutions to address Africa's developmental challenges. Our journey began with small-scale projects in rural communities, focusing on sustainable agriculture and clean water access.</p>
-              <p className="mt-4">Over the years, we've expanded our reach and impact, partnering with local and international organizations to implement cutting-edge technologies and empower communities across the continent.</p>
+              <p className="mb-4">The Humanitarian Foundation for Innovative Development in Africa (HUFIDA) was established as a voluntary, not-for-profit association (Ideell Forening) with its head office in Skövde, Sweden. Founded on September 29, 2019, HUFIDA aims to create a lasting impact on sustainable development in Africa.</p>
+              <p className="mb-4">Our key objectives include:</p>
+              <ul className="list-disc list-inside mb-4">
+                <li>Creating awareness in Sweden and other Northern countries about poverty and sustainable development challenges in Africa.</li>
+                <li>Empowering vulnerable and marginalized groups in Africa with innovative tools for poverty alleviation and sustainable livelihood.</li>
+                <li>Supporting and fostering solidarity amongst local African communities for meaningful integrated development, socio-cultural cohesion, and peace.</li>
+                <li>Developing and deploying infrastructure to maintain a stable future of aid.</li>
+              </ul>
+              <p className="mb-4">To achieve these objectives, HUFIDA engages in various activities, including:</p>
+              <ul className="list-disc list-inside mb-4">
+                <li>Organizing seminars, conferences, and workshops on sustainable development in Africa.</li>
+                <li>Setting up an Information Clearing House and Documentation (ICHD) Center on African development.</li>
+                <li>Assisting in the conservation, restoration, and protection of wildlife, habitats, and associated biodiversity in Africa.</li>
+                <li>Delivering humanitarian aid to vulnerable persons in conflict zones.</li>
+                <li>Producing a monthly newsletter on development and humanitarian challenges in Africa.</li>
+                <li>Collaborating with other organizations for mentorship, knowledge sharing, and capacity building initiatives.</li>
+              </ul>
+              <p>HUFIDA is committed to transparency, collaboration, and sustainable impact in all its endeavors across Africa.</p>
             </CardContent>
           </Card>
         </TabsContent>
