@@ -52,8 +52,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/hero-banner.jpg')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{homeContent.heroTitle}</h1>
+        <div className="relative z-10 text-center text-white space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{homeContent.heroTitle}</h1>
           <div className="flex justify-center space-x-4">
             <Link to="/get-involved">
               <Button size="lg" variant="secondary">Get Involved</Button>
