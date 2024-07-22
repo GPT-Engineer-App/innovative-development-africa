@@ -2,11 +2,36 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { MapPin, Plus } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("current");
+  const [isNewProjectDialogOpen, setIsNewProjectDialogOpen] = useState(false);
+  const [newProject, setNewProject] = useState({
+    name: "",
+    description: "",
+    scope: "",
+    timeline: "",
+    stakeholders: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewProject((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmitNewProject = (e) => {
+    e.preventDefault();
+    console.log("New Project Submitted:", newProject);
+    // Here you would typically send this data to your backend
+    setIsNewProjectDialogOpen(false);
+    setNewProject({ name: "", description: "", scope: "", timeline: "", stakeholders: "" });
+  };
 
   const currentProjects = [
     {
@@ -44,7 +69,77 @@ const Projects = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Our Projects</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-4xl font-bold">Our Projects</h1>
+        <Dialog open={isNewProjectDialogOpen} onOpenChange={setIsNewProjectDialogOpen}>
+          <DialogTrigger asChild>
+            <Button className="flex items-center">
+              <Plus className="mr-2 h-4 w-4" /> New Project
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Add New Project</DialogTitle>
+              <DialogDescription>
+                Fill in the details for the new project.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSubmitNewProject} className="space-y-4">
+              <div>
+                <Label htmlFor="name">Project Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={newProject.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="description">Project Description</Label>
+                <Textarea
+                  id="description"
+                  name="description"
+                  value={newProject.description}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="scope">Project Scope</Label>
+                <Textarea
+                  id="scope"
+                  name="scope"
+                  value={newProject.scope}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="timeline">Project Timeline</Label>
+                <Input
+                  id="timeline"
+                  name="timeline"
+                  value={newProject.timeline}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="stakeholders">Stakeholders</Label>
+                <Input
+                  id="stakeholders"
+                  name="stakeholders"
+                  value={newProject.stakeholders}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <Button type="submit">Submit New Project</Button>
+            </form>
+          </DialogContent>
+        </Dialog>
+      </div>
       
       {/* Agriculture and Agribusiness Introduction */}
       <section className="mb-12">
