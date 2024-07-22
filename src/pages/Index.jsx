@@ -56,11 +56,13 @@ const Index = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{homeContent.heroTitle}</h1>
           <div className="flex justify-center space-x-4">
             <Link to="/get-involved">
-              <Button size="lg" variant="secondary">Get Involved</Button>
+              <Button size="lg" variant="secondary" className="hover:bg-secondary-foreground hover:text-secondary transition-colors">
+                Get Involved
+              </Button>
             </Link>
             <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
               <DialogTrigger asChild>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="secondary" className="hover:bg-secondary-foreground hover:text-secondary transition-colors">
                   <UserPlus className="mr-2 h-4 w-4" />
                   Register
                 </Button>
