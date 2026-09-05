@@ -1,0 +1,12 @@
+version: 1
+repository: davlindh/innovative-development-africa
+purpose: Africa-focused innovation and development vertical experiment.
+status: vertical-reference
+canonical_parent: davlindh/faving-journey-shaper
+capabilities: [innovation, development, community, impact]
+vertical: humanitarian
+omniframez_role: vertical-validation
+evidence: {confidence: inferred, sources: [repository-name]}
+harvest_action: harvest-domain-capabilities
+relations:
+  - validates: innovation and community capabilities in development context
